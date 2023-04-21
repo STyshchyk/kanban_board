@@ -1,8 +1,11 @@
 import React from 'react';
 import './App.scss';
 import {Button, Stack} from "react-bootstrap";
+import {useGetPullRequestsQuery} from "./Api/IssueApi";
 
 function App() {
+  const {data =[], isLoading, isError} = useGetPullRequestsQuery("https://github.com/facebook/react/pulls")
+  if (!isLoading) console.log(data)
   return (
     <div className="App">
       <Stack direction="horizontal" gap={2}>
