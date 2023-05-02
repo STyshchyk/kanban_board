@@ -4,7 +4,7 @@ import {Button, Stack} from "react-bootstrap";
 import {useGetPullRequestsQuery} from "./Api/IssueApi";
 
 function App() {
-  const {data =[], isLoading, isError} = useGetPullRequestsQuery("https://github.com/facebook/react/pulls")
+  const {data =[], isLoading, isError} = useGetPullRequestsQuery("https://api.github.com/repos/facebook/react/pulls")
   if (!isLoading) console.log(data)
   return (
     <div className="App">
